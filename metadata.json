@@ -1,0 +1,6 @@
+{
+  "name": "Lumé by Cin · Joyas Waterproof",
+  "description": "Lumé by Cin — joyas waterproof de acero 316L enchapado en oro 18k PVD. Hipoalergénicas. Envíos a todo el Perú.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
