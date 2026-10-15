@@ -201,7 +201,7 @@ export default function App() {
 
   // Filter products
   const filteredProducts = PRODUCTS.filter((p: Product) => {
-    const matchesCat = activeCategory === "todo" || p.cat === activeCategory;
+    const matchesCat = activeCategory === "todo" || p.cat === activeCategory || (p.cats && p.cats.includes(activeCategory));
     const matchesQuery = p.name.toLowerCase().includes(searchQuery.toLowerCase().trim());
     return matchesCat && matchesQuery;
   });
@@ -260,7 +260,7 @@ export default function App() {
     ...Object.entries(CATS).map(([k, v]: [string, string]) => ({
       key: k,
       label: v,
-      count: PRODUCTS.filter((p: Product) => p.cat === k).length,
+      count: PRODUCTS.filter((p: Product) => p.cat === k || (p.cats && p.cats.includes(k))).length,
     })),
   ];
 
@@ -656,7 +656,8 @@ export default function App() {
                   + Añadir
                 </button>
               </article>
-            ))}
+              );
+            })}
           </div>
 
           {filteredProducts.length === 0 && (
@@ -1128,7 +1129,7 @@ export default function App() {
                     <img
                       src={curModalImg}
                       alt={selectedProduct.name}
-                      className={}
+                      className={"max-w-full max-h-[300px] object-contain drop-shadow-md transition-all duration-300 " + (modalImages && modalImages.length > 1 ? "cursor-pointer hover:scale-[1.02]" : "")}
                       onClick={() => {
                         if (modalImages && modalImages.length > 1) {
                           setModalImageIndex((prev) => (prev + 1) % modalImages.length);
