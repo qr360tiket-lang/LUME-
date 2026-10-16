@@ -69,16 +69,16 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 4,
-    name: "Collar Cruz Gold",
+    name: "Jhuliett",
     cat: "collares",
     price: 45,
-    art: "cross",
-    tag: "Clásico",
+    art: "heart",
+    tag: "Nuevo",
     measure: "40 cm + 6 cm extensor",
-    desc: "Cruz pulida minimalista en cadena clásica. Medida: 40 cm + 6 cm de extensor. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
-    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792028219/8ac5f387-a05f-46c5-806e-90e295e0bab6.png",
+    desc: "Diseño Jhuliett delicado y sofisticado con caída fina y brillo radiante. Medida: 40 cm + 6 cm de extensor. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
+    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792028308/430efdcb-39cd-4ce0-959a-e7fac72ea220.png",
     images: [
-      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792028219/8ac5f387-a05f-46c5-806e-90e295e0bab6.png",
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792028308/430efdcb-39cd-4ce0-959a-e7fac72ea220.png",
     ],
     details: [
       "Medida: 40 cm + 6 cm de extensor",
@@ -89,7 +89,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 5,
-    name: "Collar Cruz Gold Maxi",
+    name: "Collar Cruz Gold",
     cat: "collares",
     price: 66,
     art: "cross",
