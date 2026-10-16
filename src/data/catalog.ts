@@ -50,21 +50,80 @@ export const PRODUCTS: Product[] = [
     id: 6,
     name: "Collar Belle Chocker",
     cat: "collares",
+    cats: ["collares", "sets"],
     price: 52,
     art: "snake",
     tag: "Tendencia",
-    measure: "Ajustable al cuello",
+    measure: "Gargantilla adaptable",
     desc: "Gargantilla rígida flexible con terminación pulida de alto impacto. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
     image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168603/Collar_dorado_con_detalle_de_pulsera.png",
     images: [
       "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168603/Collar_dorado_con_detalle_de_pulsera.png",
-      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168757/Collar_y_pulsera_dorados_en_detalle.png",
     ],
     details: [
       "Medida: gargantilla adaptable",
       "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
       "100% waterproof: resistente a ducha, mar y piscina",
       "Hipoalergénico, apto para pieles sensibles",
+    ],
+  },
+  {
+    id: 4,
+    name: "Collar Cruz Gold",
+    cat: "collares",
+    price: 45,
+    art: "cross",
+    tag: "Clásico",
+    measure: "40 cm + 6 cm extensor",
+    desc: "Cruz pulida minimalista en cadena clásica. Medida: 40 cm + 6 cm de extensor. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
+    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792028219/8ac5f387-a05f-46c5-806e-90e295e0bab6.png",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792028219/8ac5f387-a05f-46c5-806e-90e295e0bab6.png",
+    ],
+    details: [
+      "Medida: 40 cm + 6 cm de extensor",
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
+      "100% waterproof: resistente a ducha, mar y piscina",
+      "Hipoalergénico, apto para pieles sensibles",
+    ],
+  },
+  {
+    id: 5,
+    name: "Collar Cruz Gold Maxi",
+    cat: "collares",
+    price: 66,
+    art: "cross",
+    tag: "Exclusivo",
+    measure: "45 cm + 6 cm extensor",
+    desc: "Cruz pulida en cadena más amplia para layering perfecto. Medida: 45 cm + 6 cm de extensor. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
+    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792028229/84da98e4-7af1-4e69-b96b-5914b4f43549.png",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792028229/84da98e4-7af1-4e69-b96b-5914b4f43549.png",
+    ],
+    details: [
+      "Medida: 45 cm + 6 cm de extensor",
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
+      "100% waterproof: resistente a ducha, mar y piscina",
+      "Hipoalergénico, apto para pieles sensibles",
+    ],
+  },
+  {
+    id: 20,
+    name: "Collar Lazos de Amor",
+    cat: "collares",
+    price: 65,
+    art: "heart",
+    tag: "Nuevo",
+    desc: "Diseño refinado de lazos entrelazados con caída delicada y brillo dorado radiante. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
+    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792028314/804de4e5-51b5-4aef-ad7b-2d55c57831b1.png",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792028314/804de4e5-51b5-4aef-ad7b-2d55c57831b1.png",
+    ],
+    details: [
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
+      "100% waterproof: resistente a ducha, mar y piscina",
+      "Hipoalergénico, apto para pieles sensibles",
+      "Diseño exclusivo Lazos de Amor",
     ],
   },
 
@@ -94,14 +153,14 @@ export const PRODUCTS: Product[] = [
     id: 10,
     name: "Pulsera Choker",
     cat: "pulseras",
+    cats: ["pulseras", "sets"],
     price: 45,
     art: "chain",
-    measure: "Ajustable",
+    measure: "Estructura adaptable",
     desc: "Pulsera de estructura moderna combinable en set con el Collar Belle. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
     image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168757/Collar_y_pulsera_dorados_en_detalle.png",
     images: [
       "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168757/Collar_y_pulsera_dorados_en_detalle.png",
-      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168603/Collar_dorado_con_detalle_de_pulsera.png",
     ],
     details: [
       "Medida: estructura adaptable",
@@ -112,7 +171,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 17,
-    name: "Pulsera Romantic Stile",
+    name: "Romantic Stile",
     cat: "pulseras",
     price: 54,
     art: "chain",
@@ -131,7 +190,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 18,
-    name: "Pulsera Eslabones de Color",
+    name: "Eslabones de color",
     cat: "pulseras",
     price: 60,
     art: "chain",
@@ -213,7 +272,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 19,
-    name: "Aretes Gala",
+    name: "Gala",
     cat: "aretes",
     price: 46,
     art: "bold",
@@ -231,7 +290,7 @@ export const PRODUCTS: Product[] = [
     ],
   },
 
-  // --- ANILLOS (Solo los 2 con foto confirmados) ---
+  // --- ANILLOS ---
   {
     id: 14,
     name: "Anillo Ondas",

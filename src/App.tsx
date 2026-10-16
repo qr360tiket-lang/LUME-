@@ -450,7 +450,7 @@ export default function App() {
                 </defs>
                 <text>
                   <textPath href="#circ">
-                    Waterproof ✦ Hipoalergénicas ✦ Enchapado Oro 18k ✦
+                    Waterproof ✦ Hipoalergénicas ✦ Enchapado en Oro 18k PVD ✦
                   </textPath>
                 </text>
               </svg>
@@ -651,7 +651,7 @@ export default function App() {
                   <div>
                     <h3>{p.name}</h3>
                     <div className="mat">
-                      {CATS[p.cat]} · Enchapado Oro 18k
+                      {CATS[p.cat]} · Enchapado en Oro 18k PVD
                     </div>
                   </div>
                   <div className="price">{soles(p.price)}</div>
