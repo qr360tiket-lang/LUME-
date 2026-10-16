@@ -153,7 +153,6 @@ export const PRODUCTS: Product[] = [
     id: 10,
     name: "Pulsera Choker",
     cat: "pulseras",
-    cats: ["pulseras", "sets"],
     price: 45,
     art: "chain",
     measure: "Estructura adaptable",
