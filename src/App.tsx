@@ -7,6 +7,8 @@ import {
   soles,
   waLink,
   art,
+  WHATSAPP,
+  WHATSAPP_DISPLAY,
 } from "./data/catalog.ts";
 import { WaterStage } from "./components/WaterStage.tsx";
 
@@ -27,6 +29,7 @@ export default function App() {
   // Shopping bag: Record<productId, quantity>
   const [bag, setBag] = useState<Record<number, number>>({});
   const [isBagOpen, setIsBagOpen] = useState<boolean>(false);
+  const [reclamacionesOpen, setReclamacionesOpen] = useState<boolean>(false);
   const [bagCountBump, setBagCountBump] = useState<boolean>(false);
 
   // Product modal
@@ -91,7 +94,7 @@ export default function App() {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedProduct]);
+  }, [selectedProduct, reclamacionesOpen]);
 
   // IntersectionObserver for reveal (.rv) and stats
   useEffect(() => {
@@ -197,6 +200,7 @@ export default function App() {
   const closeAllOverlays = () => {
     setIsBagOpen(false);
     setSelectedProduct(null);
+    setReclamacionesOpen(false);
   };
 
   // Filter products
@@ -222,7 +226,8 @@ export default function App() {
     const lines = bagItemIds.map((id: number) => {
       const p = PRODUCTS.find((item: Product) => item.id === id);
       const qty = bag[id];
-      return `• ${qty} x ${p?.name} (${soles(p?.price || 0)})`;
+      const measureText = p?.measure ? ` [${p.measure}]` : "";
+      return `• ${qty} x ${p?.name}${measureText} (${soles(p?.price || 0)})`;
     });
     const message = `Hola Lumé by Cin ✨ Quiero hacer este pedido:\n\n${lines.join(
       "\n"
@@ -269,7 +274,7 @@ export default function App() {
     "Waterproof",
     "El color no se va",
     "Hipoalergénicas",
-    "Oro 18k PVD",
+    "Enchapado en Oro 18k PVD",
     "Everyday elegance",
     "Envíos a todo el Perú",
   ];
@@ -416,7 +421,7 @@ export default function App() {
               </a>
             </div>
             <div className="hero-perks">
-              <div>Oro 18k PVD</div>
+              <div>Enchapado en Oro 18k PVD</div>
               <div>Pieles sensibles</div>
               <div>Envíos nacionales</div>
             </div>
@@ -444,12 +449,12 @@ export default function App() {
                 </defs>
                 <text>
                   <textPath href="#circ">
-                    Waterproof ✦ Hipoalergénicas ✦ Oro 18k ✦
+                    Waterproof ✦ Hipoalergénicas ✦ Enchapado Oro 18k ✦
                   </textPath>
                 </text>
               </svg>
               <b>
-                18k<small>PVD</small>
+                18k<small>Enchapado PVD</small>
               </b>
             </div>
 
@@ -643,7 +648,7 @@ export default function App() {
                   <div>
                     <h3>{p.name}</h3>
                     <div className="mat">
-                      {CATS[p.cat]} · Oro 18k
+                      {CATS[p.cat]} · Enchapado Oro 18k
                     </div>
                   </div>
                   <div className="price">{soles(p.price)}</div>
@@ -693,7 +698,7 @@ export default function App() {
               </div>
               <div className="stat">
                 <b>{counted ? counts.c18 : 18}k</b>
-                <span>Oro PVD</span>
+                <span>Enchapado PVD</span>
               </div>
             </div>
           </div>
@@ -833,7 +838,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* INSTAGRAM CTA */}
+      {/* REDES SOCIALES CTA */}
       <section className="ig">
         <span
           className="orb"
@@ -847,16 +852,27 @@ export default function App() {
           <span className="eyebrow" style={{ color: "var(--gold-2)" }}>
             Síguenos y sé parte del brillo
           </span>
-          <h2>Nuevas piezas, primero en Instagram</h2>
-          <div className="handle">@lume_by_cin</div>
-          <a
-            className="btn"
-            href="https://www.instagram.com/lume_by_cin/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Seguir en Instagram
-          </a>
+          <h2>Nuevas piezas y novedades en nuestras redes</h2>
+          <div className="handle">@lume_by_cin · @lum.by.cin</div>
+          <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", marginTop: "1.25rem" }}>
+            <a
+              className="btn"
+              href="https://instagram.com/lume_by_cin?psln=MWF2M205Yzc5cjhvag%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Seguir en Instagram
+            </a>
+            <a
+              className="btn"
+              style={{ background: "#111", color: "#fff", borderColor: "#333" }}
+              href="https://www.tiktok.com/@lum.by.cin?_r=1&_t=ZS-9AaBhiCIy4u"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Seguir en TikTok
+            </a>
+          </div>
         </div>
       </section>
 
@@ -870,7 +886,7 @@ export default function App() {
                 <span className="by">BY CIN · JEWELRY</span>
               </div>
               <p className="tagline">
-                Joyas waterproof e hipoalergénicas de acero 316L con oro 18k PVD. Everyday
+                Joyas waterproof e hipoalergénicas de acero 316L con enchapado en oro 18k PVD. Everyday
                 elegance.
               </p>
             </div>
@@ -906,7 +922,7 @@ export default function App() {
               </ul>
             </div>
             <div>
-              <h4>Contacto</h4>
+              <h4>Contacto y Redes</h4>
               <ul>
                 <li>
                   <a
@@ -919,22 +935,61 @@ export default function App() {
                       );
                     }}
                   >
-                    WhatsApp
+                    WhatsApp: 986 492 712
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://www.instagram.com/lume_by_cin/"
+                    href="https://instagram.com/lume_by_cin?psln=MWF2M205Yzc5cjhvag%3D%3D&utm_source=qr"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Instagram
+                    Instagram: @lume_by_cin
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.tiktok.com/@lum.by.cin?_r=1&_t=ZS-9AaBhiCIy4u"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    TikTok: @lum.by.cin
                   </a>
                 </li>
                 <li>Envíos a todo el Perú 🇵🇪</li>
               </ul>
             </div>
           </div>
+          {/* BLOQUE LIBRO DE RECLAMACIONES */}
+          <div className="reclamaciones-block">
+            <button
+              type="button"
+              className="reclamaciones-btn"
+              onClick={() => setReclamacionesOpen(true)}
+              title="Libro de Reclamaciones - Lumé by Cin"
+              aria-label="Libro de Reclamaciones"
+            >
+              <svg viewBox="0 0 260 76" className="reclamaciones-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="1" width="258" height="74" rx="8" fill="#FFFDF8" stroke="#B8955A" strokeWidth="1.5" />
+                <g transform="translate(18, 16)">
+                  <rect x="0" y="2" width="36" height="40" rx="3" fill="#4B3922" />
+                  <path d="M4 8 H32 M4 14 H32 M4 20 H28 M4 26 H24" stroke="#D4B57A" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M18 2 V42" stroke="#FFFDF8" strokeWidth="2" strokeLinecap="round" />
+                  <circle cx="28" cy="32" r="3" fill="#D4B57A" />
+                </g>
+                <text x="66" y="28" fill="#4B3922" fontFamily="'Playfair Display', Georgia, serif" fontSize="12" fontWeight="700" letterSpacing="0.08em">
+                  LIBRO DE RECLAMACIONES
+                </text>
+                <text x="66" y="44" fill="#7D6C55" fontFamily="'Jost', sans-serif" fontSize="9.5" letterSpacing="0.05em">
+                  LUMÉ BY CIN · TIENDA VIRTUAL
+                </text>
+                <text x="66" y="58" fill="#B8955A" fontFamily="'Jost', sans-serif" fontSize="8.5" fontWeight="500">
+                  Políticas de cambios, devoluciones y envíos →
+                </text>
+              </svg>
+            </button>
+          </div>
+
           <div className="legal">
             <span>© 2026 Lumé by Cin. Todos los derechos reservados.</span>
             <span>Diseño web por wha.pe</span>
@@ -962,7 +1017,7 @@ export default function App() {
 
       {/* OVERLAY */}
       <div
-        className={`overlay ${isBagOpen || selectedProduct ? "on" : ""}`}
+        className={`overlay ${isBagOpen || selectedProduct || reclamacionesOpen ? "on" : ""}`}
         id="overlay"
         onClick={closeAllOverlays}
       />
@@ -1005,6 +1060,11 @@ export default function App() {
                   </div>
                   <div>
                     <h4>{p.name}</h4>
+                    {p.measure && (
+                      <div className="text-[11px] text-[#8e857b] font-serif italic mb-1">
+                        {p.measure}
+                      </div>
+                    )}
                     <small>{soles(p.price)}</small>
                     <br />
                     <div className="qty">
@@ -1217,6 +1277,93 @@ export default function App() {
                 >
                   Añadir al pedido
                 </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+            {/* LIBRO DE RECLAMACIONES / POLÍTICAS MODAL */}
+      <div
+        className={`modal ${reclamacionesOpen ? "on" : ""}`}
+        id="reclamacionesModal"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Libro de Reclamaciones y Políticas"
+        onClick={(e) => {
+          if ((e.target as HTMLElement).id === "reclamacionesModal") {
+            closeAllOverlays();
+          }
+        }}
+      >
+        {reclamacionesOpen && (
+          <div className="box reclamaciones-box">
+            <button
+              className="close"
+              aria-label="Cerrar modal de políticas"
+              onClick={closeAllOverlays}
+            >
+              ✕
+            </button>
+            <div className="reclamaciones-header">
+              <span className="eyebrow">Lumé by Cin</span>
+              <h2>POLÍTICAS DE CAMBIOS, DEVOLUCIONES Y ENVÍOS</h2>
+              <div className="reclamaciones-badge">Libro de Reclamaciones</div>
+            </div>
+
+            <div className="reclamaciones-body">
+              <div className="reclamaciones-section">
+                <span className="sec-icon">✦</span>
+                <div>
+                  <h3>Joyas enchapadas en oro de 18k</h3>
+                  <p>
+                    Nuestras piezas son enchapadas en oro de 18k, no de oro macizo. Para conservar su acabado, evita el contacto con perfumes, productos químicos y humedad prolongada.
+                  </p>
+                </div>
+              </div>
+
+              <div className="reclamaciones-section">
+                <span className="sec-icon">✦</span>
+                <div>
+                  <h3>Cambios y devoluciones</h3>
+                  <p>
+                    Aceptamos cambios o devoluciones por fallas comprobadas de fabricación. Escríbenos por WhatsApp al <strong>986 492 712</strong> con tu número de pedido o constancia de compra y una descripción del inconveniente. Puedes adjuntar fotografías para facilitar la evaluación.
+                  </p>
+                  <p>
+                    Una vez comprobada la falla, coordinaremos el cambio o reembolso correspondiente. Si la falla es atribuible a la tienda, asumiremos los gastos necesarios de devolución. Estas condiciones no limitan tus derechos como consumidor.
+                  </p>
+                </div>
+              </div>
+
+              <div className="reclamaciones-section">
+                <span className="sec-icon">✦</span>
+                <div>
+                  <h3>Envíos y entregas</h3>
+                  <ul className="reclamaciones-list">
+                    <li>Envíos por Rapicargo, previa coordinación.</li>
+                    <li>Entregas con pago contra entrega en algunos distritos de Lima, previa coordinación y confirmación de cobertura.</li>
+                    <li>El costo y plazo de entrega se confirmarán antes de finalizar tu compra.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="reclamaciones-section contact-highlight">
+                <span className="sec-icon">✦</span>
+                <div>
+                  <h3>Atención al cliente</h3>
+                  <p>
+                    WhatsApp: <strong>986 492 712</strong>
+                  </p>
+                  <a
+                    className="btn btn-dark"
+                    style={{ marginTop: "12px", display: "inline-flex", alignItems: "center", gap: "8px" }}
+                    href="https://wa.me/51986492712?text=Hola%20Lum%C3%A9%20by%20Cin%20%E2%9C%A8%20Deseo%20hacer%20una%20consulta%20sobre%20pol%C3%ADticas%20o%20mi%20pedido"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Contactar por WhatsApp (986 492 712)
+                  </a>
+                </div>
               </div>
             </div>
           </div>

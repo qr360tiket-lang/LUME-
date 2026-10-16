@@ -1,4 +1,5 @@
-export const WHATSAPP = "51999999999";
+export const WHATSAPP = "51986492712";
+export const WHATSAPP_DISPLAY = "986 492 712";
 
 export const CATS: Record<string, string> = {
   collares: "Collares",
@@ -11,15 +12,16 @@ export const CATS: Record<string, string> = {
 export interface Product {
   id: number;
   name: string;
-  cat: string;
+  cat: "collares" | "pulseras" | "aretes" | "anillos" | "sets";
   cats?: string[];
   price: number;
   art: string;
   tag?: string;
+  measure?: string;
   desc: string;
-  image?: string;
-  images?: string[];
-  details?: string[];
+  image: string;
+  images: string[];
+  details: string[];
 }
 
 export const PRODUCTS: Product[] = [
@@ -28,180 +30,224 @@ export const PRODUCTS: Product[] = [
     id: 1,
     name: "Collar Snake Gold",
     cat: "collares",
-    price: 65,
+    price: 49,
     art: "snake",
-    tag: "Favorito",
-    desc: "Cadena plana tipo serpiente con brillo espejo. Medida: 38 cm + 6 cm de extensor. Acero inoxidable 316L · Oro 18k PVD.",
-    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792028353/c6a21e9f-eef2-4bd7-a248-0a2e54df8ba4.png",
-    details: [
-      "Medida: 38 cm + 6 cm de extensor",
-      "Acero inoxidable 316L · Oro 18k PVD",
-      "100% waterproof: el color no se va",
-      "Hipoalergénica, apta para pieles sensibles",
+    tag: "Bestseller",
+    measure: "40 cm + 6 cm extensor",
+    desc: "Malla tubular flexible con caída líquida y brillo tipo espejo. Medida: 40 cm + 6 cm de extensor. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
+    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168330/aa.jpg",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168330/aa.jpg",
     ],
-  },
-  {
-    id: 2,
-    name: "Collar Devoción",
-    cat: "collares",
-    price: 45,
-    art: "cross",
-    tag: "Nuevo",
-    desc: "Dije medalla de devoción con acabado brillante. Medida: 40 cm + 6 cm de extensor. Acero inoxidable 316L · Oro 18k PVD.",
-    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792028338/d385c8d7-22c3-401c-9679-caeab66b09ac_1.png",
     details: [
       "Medida: 40 cm + 6 cm de extensor",
-      "Acero inoxidable 316L · Oro 18k PVD",
-      "100% waterproof: el color no se va",
-      "Hipoalergénica, apta para pieles sensibles",
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
+      "100% waterproof: resistente a ducha, mar y piscina",
+      "Hipoalergénico, apto para pieles sensibles",
     ],
   },
   {
     id: 3,
-    name: "Collar Lazos de Amor",
+    name: "Collar Corazón Gold",
     cat: "collares",
-    price: 65,
+    price: 42,
     art: "heart",
-    tag: "Favorito",
-    desc: "Diseño romántico de lazo delicado con caída suave. Medida: 38 – 40 cm + 6 cm de extensor. Acero inoxidable 316L · Oro 18k PVD.",
-    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792028314/804de4e5-51b5-4aef-ad7b-2d55c57831b1.png",
+    tag: "Romántico",
+    measure: "40 cm + 6 cm extensor",
+    desc: "Dije corazón inflado sobre cadena fina pulida. Medida: 40 cm + 6 cm de extensor. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
+    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/a933ffae-c692-491c-8480-161b9a92c300.png",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/a933ffae-c692-491c-8480-161b9a92c300.png",
+    ],
     details: [
-      "Medida: 38 – 40 cm + 6 cm de extensor",
-      "Acero inoxidable 316L · Oro 18k PVD",
-      "100% waterproof: el color no se va",
-      "Hipoalergénica, apta para pieles sensibles",
+      "Medida: 40 cm + 6 cm de extensor",
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
+      "100% waterproof: resistente a ducha, mar y piscina",
+      "Hipoalergénico, apto para pieles sensibles",
     ],
   },
   {
     id: 4,
-    name: "Collar Cruz Gold (40 cm)",
+    name: "Collar Cruz Gold",
     cat: "collares",
     price: 45,
     art: "cross",
-    desc: "Cruz minimalista dorada sobre cadena fina. Medida: 40 cm + 6 cm de extensor. Acero inoxidable 316L · Oro 18k PVD.",
-    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792028308/430efdcb-39cd-4ce0-959a-e7fac72ea220.png",
+    measure: "40 cm + 6 cm extensor",
+    desc: "Cruz pulida minimalista en cadena clásica. Medida: 40 cm + 6 cm de extensor. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
+    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/f531dfcb-3394-4b55-a249-14a974b9fcff.png",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/f531dfcb-3394-4b55-a249-14a974b9fcff.png",
+    ],
     details: [
       "Medida: 40 cm + 6 cm de extensor",
-      "Acero inoxidable 316L · Oro 18k PVD",
-      "100% waterproof: el color no se va",
-      "Hipoalergénica, apta para pieles sensibles",
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
+      "100% waterproof: resistente a ducha, mar y piscina",
+      "Hipoalergénico, apto para pieles sensibles",
     ],
   },
   {
     id: 5,
-    name: "Collar Cruz Gold (45 cm)",
+    name: "Collar Cruz Gold Maxi",
     cat: "collares",
     price: 66,
     art: "cross",
-    tag: "Top",
-    desc: "Cruz dorada estilizada con mayor longitud. Medida: 45 cm + 6 cm de extensor. Acero inoxidable 316L · Oro 18k PVD.",
-    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792028229/84da98e4-7af1-4e69-b96b-5914b4f43549.png",
+    tag: "Exclusivo",
+    measure: "45 cm + 6 cm extensor",
+    desc: "Cruz pulida en cadena más amplia para layering perfecto. Medida: 45 cm + 6 cm de extensor. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
+    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/0fcb640e-566b-430c-abfa-7e44a423e20e.png",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/0fcb640e-566b-430c-abfa-7e44a423e20e.png",
+    ],
     details: [
       "Medida: 45 cm + 6 cm de extensor",
-      "Acero inoxidable 316L · Oro 18k PVD",
-      "100% waterproof: el color no se va",
-      "Hipoalergénica, apta para pieles sensibles",
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
+      "100% waterproof: resistente a ducha, mar y piscina",
+      "Hipoalergénico, apto para pieles sensibles",
     ],
   },
   {
     id: 6,
     name: "Collar Belle Chocker",
     cat: "collares",
-    price: 66,
+    price: 52,
     art: "snake",
-    tag: "Nuevo",
-    desc: "Choker elegante con textura fina y brillo impecable. Medida: 38 cm + 6 cm de extensor. Acero inoxidable 316L · Oro 18k PVD.",
-    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792028219/8ac5f387-a05f-46c5-806e-90e295e0bab6.png",
+    tag: "Tendencia",
+    measure: "Ajustable al cuello",
+    desc: "Gargantilla rígida flexible con terminación pulida de alto impacto. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
+    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168603/Collar_dorado_con_detalle_de_pulsera.png",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168603/Collar_dorado_con_detalle_de_pulsera.png",
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168757/Collar_y_pulsera_dorados_en_detalle.png",
+    ],
     details: [
-      "Medida: 38 cm + 6 cm de extensor",
-      "Acero inoxidable 316L · Oro 18k PVD",
-      "100% waterproof: el color no se va",
-      "Hipoalergénica, apta para pieles sensibles",
+      "Medida: gargantilla adaptable",
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
+      "100% waterproof: resistente a ducha, mar y piscina",
+      "Hipoalergénico, apto para pieles sensibles",
     ],
   },
 
   // --- PULSERAS ---
   {
-    id: 7,
-    name: "Pulsera Cadena Lunar",
-    cat: "pulseras",
-    price: 55,
-    art: "chain",
-    tag: "Nuevo",
-    desc: "Eslabones de brillo pulido con caída ligera. Medida: 17 cm + 6 cm de extensor. Acero inoxidable 316L · Oro 18k PVD.",
-    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030049/8ae416a1-d710-42dd-8096-612e8b3a8014.png",
-    details: [
-      "Medida: 17 cm + 6 cm de extensor",
-      "Acero inoxidable 316L · Oro 18k PVD",
-      "100% waterproof: el color no se va",
-      "Hipoalergénica, apta para pieles sensibles",
-    ],
-  },
-  {
     id: 8,
-    name: "Pulsera Fine Beour",
+    name: "Pulsera Tennis Gold",
     cat: "pulseras",
-    price: 50,
+    price: 49,
     art: "chain",
-    tag: "Favorito",
-    desc: "Diseño fino y minimalista ideal para combinar o usar en el día a día. Medida: 16 cm + 6 cm de extensor. Acero inoxidable 316L · Oro 18k PVD.",
-    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/60beb4dd-aa17-4d7c-af7b-9de8dd3f0be4.png",
+    tag: "Clásico",
+    measure: "16 cm + 4 cm extensor",
+    desc: "Línea continua de circonias engarzadas que atrapan la luz. Medida: 16 cm + 4 cm de extensor. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
+    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/12f277ca-e3bc-4286-a2ae-c706d860d5b2.png",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/12f277ca-e3bc-4286-a2ae-c706d860d5b2.png",
+    ],
     details: [
-      "Medida: 16 cm + 6 cm de extensor",
-      "Acero inoxidable 316L · Oro 18k PVD",
-      "100% waterproof: el color no se va",
+      "Medida: 16 cm + 4 cm de extensor",
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
+      "100% waterproof: resistente a ducha, mar y piscina",
       "Hipoalergénica, apta para pieles sensibles",
     ],
   },
   {
     id: 9,
-    name: "Pulsera Tendy",
+    name: "Pulsera Fine Beour",
     cat: "pulseras",
-    price: 55,
+    price: 50,
     art: "chain",
-    tag: "Nuevo",
-    desc: "Diseño en tendencia con brillo dorado y ajuste regulable. Medida: 17 cm + 6 cm de extensor. Acero inoxidable 316L · Oro 18k PVD.",
-    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030155/3a706163-1f18-4922-94b6-e01354ba52f9.png",
+    tag: "Destacado",
+    measure: "16 cm + 6 cm extensor",
+    desc: "Diseño refinado de eslabones pulidos con caída suave y cierre seguro. Medida: 16 cm + 6 cm de extensor. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
+    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/60beb4dd-aa17-4d7c-af7b-9de8dd3f0be4.png",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/60beb4dd-aa17-4d7c-af7b-9de8dd3f0be4.png",
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168432/gg.jpg",
+    ],
     details: [
-      "Medida: 17 cm + 6 cm de extensor",
-      "Acero inoxidable 316L · Oro 18k PVD",
-      "100% waterproof: el color no se va",
+      "Medida: 16 cm + 6 cm de extensor",
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
+      "100% waterproof: resistente a ducha, mar y piscina",
       "Hipoalergénica, apta para pieles sensibles",
     ],
   },
   {
     id: 10,
-    name: "Pulsera Chocker",
+    name: "Pulsera Choker",
     cat: "pulseras",
     price: 45,
     art: "chain",
-    tag: "Favorito",
-    desc: "Pulsera estilo chocker delicada y luminosa. Medida: 17 cm + 6 cm de extensor. Acero inoxidable 316L · Oro 18k PVD.",
-    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030172/cf5d2629-513b-476f-8d62-ce37d8b63c4e.png",
+    measure: "Ajustable",
+    desc: "Pulsera de estructura moderna combinable en set con el Collar Belle. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
+    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168757/Collar_y_pulsera_dorados_en_detalle.png",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168757/Collar_y_pulsera_dorados_en_detalle.png",
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168603/Collar_dorado_con_detalle_de_pulsera.png",
+    ],
     details: [
-      "Medida: 17 cm + 6 cm de extensor",
-      "Acero inoxidable 316L · Oro 18k PVD",
-      "100% waterproof: el color no se va",
+      "Medida: estructura adaptable",
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
+      "100% waterproof: resistente a ducha, mar y piscina",
       "Hipoalergénica, apta para pieles sensibles",
     ],
   },
+  {
+    id: 17,
+    name: "Pulsera Romantic Stile",
+    cat: "pulseras",
+    price: 54,
+    art: "chain",
+    tag: "Nuevo",
+    desc: "Eslabones delicados con espíritu romántico y acabado dorado radiante. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
+    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168790/5.jpg",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168790/5.jpg",
+    ],
+    details: [
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
+      "100% waterproof: resistente a ducha, mar y piscina",
+      "Hipoalergénica, apta para pieles sensibles",
+      "Acabado pulido de alta duración",
+    ],
+  },
+  {
+    id: 18,
+    name: "Pulsera Eslabones de Color",
+    cat: "pulseras",
+    price: 60,
+    art: "chain",
+    tag: "Nuevo",
+    desc: "Cadena de eslabones dorados realzados con detalles de color sofisticados. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
+    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168843/7.jpg",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168843/7.jpg",
+    ],
+    details: [
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
+      "100% waterproof: no se despinta ni oxida",
+      "Hipoalergénica, apta para pieles sensibles",
+      "Diseño moderno y versátil",
+    ],
+  },
 
-  // --- ARETES ---
-  // Orden exacto solicitado: Aretes Mana, Aretes Finas Gold, Pack Aretes Petite
+  // --- ARETES (En orden especificado por el usuario) ---
   {
     id: 11,
     name: "Aretes Mana",
     cat: "aretes",
     price: 35,
     art: "huggies",
-    tag: "Nuevo",
-    desc: "Aretes elegantes y delicados de silueta orgánica con brillo dorado cálido. Medida: 1 – 1.2 cm (primer arete). Acero inoxidable 316L · Oro 18k PVD.",
-    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792067947/be0d6c81-8d00-4fb6-812a-a6644d460dfc.png",
+    tag: "Favorito",
+    measure: "1 – 1.2 cm",
+    desc: "Argollitas clásicas de ajuste cómodo y brillo dorado cálido para uso 24/7. Medida: 1 – 1.2 cm (primer arete). Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
+    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168070/Oreja_con_aro_dorado.png",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168070/Oreja_con_aro_dorado.png",
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792067947/be0d6c81-8d00-4fb6-812a-a6644d460dfc.png",
+    ],
     details: [
       "Medida: 1 – 1.2 cm (primer arete)",
-      "Acero inoxidable 316L · Oro 18k PVD",
-      "100% waterproof: el color no se va",
-      "Hipoalergénica, apta para pieles sensibles",
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
+      "100% waterproof: duérmete y báñate con ellos",
+      "Hipoalergénicos, aptos para orejas sensibles",
     ],
   },
   {
@@ -210,41 +256,61 @@ export const PRODUCTS: Product[] = [
     cat: "aretes",
     price: 35,
     art: "bold",
-    tag: "Top",
-    desc: "Aretes colgantes estilizados con caída fina y brillo impecable. Medida: 5.50 cm. Acero inoxidable 316L · Oro 18k PVD.",
+    tag: "Bestseller",
+    measure: "5.50 cm",
+    desc: "Arracadas largas y estilizadas que aportan luz y elegancia al rostro. Medida: 5.50 cm. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
     image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792067947/9372f6cf-1c01-49ff-9a5e-51299e119a87.png",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792067947/9372f6cf-1c01-49ff-9a5e-51299e119a87.png",
+    ],
     details: [
       "Medida: 5.50 cm",
-      "Acero inoxidable 316L · Oro 18k PVD",
-      "100% waterproof: el color no se va",
-      "Hipoalergénica, apta para pieles sensibles",
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
+      "100% waterproof: no pierden su color dorado",
+      "Ligeros y confortables todo el día",
     ],
   },
   {
     id: 13,
     name: "Pack Aretes Petite",
     cat: "aretes",
-    cats: ["aretes", "sets"],
     price: 65,
     art: "huggies",
-    tag: "Pack 3 pares",
-    desc: "Pack de 3 pares de aretes petite dorados elegantes. S/ 65 precio del pack · c/u S/ 25. Medidas: 0.38 cm · 0.6 cm · 1.01 cm. Acero inoxidable 316L · Oro 18k PVD.",
+    tag: "Pack x3",
+    measure: "0.38 cm · 0.6 cm · 1.01 cm",
+    desc: "Set de 3 pares de aretes minimalistas perfectos para múltiples perforaciones. Precio del pack S/ 65 (c/u S/ 25). Medidas: 0.38 cm · 0.6 cm · 1.01 cm. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
     image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030578/Tres_pares_de_aretes_dorados_elegantes.png",
     images: [
       "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030578/Tres_pares_de_aretes_dorados_elegantes.png",
-      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030578/5abf0173-73d3-432d-ac9c-25d20d15bf0b.png",
     ],
     details: [
-      "S/ 65 precio del pack (c/u S/ 25)",
+      "Contenido: Set de 3 pares (precio individual S/ 25 c/u)",
       "Medidas: 0.38 cm · 0.6 cm · 1.01 cm",
-      "Incluye 3 pares dorados combinables",
-      "Acero inoxidable 316L · Oro 18k PVD",
-      "100% waterproof: el color no se va",
-      "Hipoalergénica, apta para pieles sensibles",
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
+      "100% waterproof e hipoalergénicos",
+    ],
+  },
+  {
+    id: 19,
+    name: "Aretes Gala",
+    cat: "aretes",
+    price: 46,
+    art: "bold",
+    tag: "Nuevo",
+    desc: "Aretes dorados de diseño fluido y presencia escultórica ideales para ocasiones especiales. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
+    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168948/443.png",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792168948/443.png",
+    ],
+    details: [
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
+      "100% waterproof: resistente a ducha y sudor",
+      "Hipoalergénicos, aptos para pieles sensibles",
+      "Diseño sofisticado para fiesta o gala",
     ],
   },
 
-  // --- ANILLOS ---
+  // --- ANILLOS (Solo los 2 con foto confirmados) ---
   {
     id: 14,
     name: "Anillo Ondas",
@@ -252,11 +318,15 @@ export const PRODUCTS: Product[] = [
     price: 43,
     art: "trio",
     tag: "Favorito",
-    desc: "Silueta ondulada moderna que envuelve el dedo con delicadeza. Medida: regulable. Acero inoxidable 316L · Oro 18k PVD.",
+    measure: "Regulable",
+    desc: "Silueta ondulada moderna que envuelve el dedo con delicadeza. Medida: regulable. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
     image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030263/ec12ae98-cef8-4083-9d72-787f9389f1c9.png",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030263/ec12ae98-cef8-4083-9d72-787f9389f1c9.png",
+    ],
     details: [
       "Medida: regulable (se adapta a tu dedo)",
-      "Acero inoxidable 316L · Oro 18k PVD",
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
       "100% waterproof: el color no se va",
       "Hipoalergénica, apta para pieles sensibles",
     ],
@@ -268,11 +338,15 @@ export const PRODUCTS: Product[] = [
     price: 45,
     art: "signet",
     tag: "Nuevo",
-    desc: "Banda continua dorada con acabado pulido y presencia sutil. Medida: regulable. Acero inoxidable 316L · Oro 18k PVD.",
+    measure: "Regulable",
+    desc: "Banda continua dorada con acabado pulido y presencia sutil. Medida: regulable. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
     image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030262/03b1a7e1-9f51-4498-8e50-61fd0c915e3d.png",
+    images: [
+      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030262/03b1a7e1-9f51-4498-8e50-61fd0c915e3d.png",
+    ],
     details: [
       "Medida: regulable (se adapta a tu dedo)",
-      "Acero inoxidable 316L · Oro 18k PVD",
+      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
       "100% waterproof: el color no se va",
       "Hipoalergénica, apta para pieles sensibles",
     ],
@@ -280,116 +354,122 @@ export const PRODUCTS: Product[] = [
 ];
 
 export const FAQ = [
-  ["¿De verdad puedo ducharme con mis joyas?", "Sí. Nuestras piezas son de acero 316L enchapado en oro 18k con tecnología PVD, por lo que resisten el agua, el sudor y el uso diario sin perder su color."],
-  ["¿Son aptas para pieles sensibles?", "Sí, son hipoalergénicas. El acero 316L es un material noble que se usa justamente por ser amable con la piel."],
-  ["¿Cómo cuido mis joyas para que duren más?", "Sécalas después de nadar, guárdalas por separado para evitar roces y evita productos abrasivos. Con eso tu brillo dura mucho más."],
-  ["¿Hacen envíos a provincia?", "Sí, enviamos a todo el Perú. Al enviar tu pedido por WhatsApp te confirmamos el costo y tiempo de entrega a tu ciudad."],
-  ["¿Cuáles son los medios de pago?", "Te los indicamos al confirmar tu pedido por WhatsApp."],
+  [
+    "¿De verdad puedo ducharme con mis joyas?",
+    "Sí. Nuestras piezas son de acero 316L con enchapado en oro 18k PVD, por lo que resisten el agua, el sudor y el uso diario sin perder su color.",
+  ],
+  [
+    "¿Son aptas para pieles sensibles?",
+    "Sí, son 100% hipoalergénicas. El acero 316L con enchapado en oro 18k PVD es un material noble libre de níquel, especialmente formulado para ser amable con tu piel.",
+  ],
+  [
+    "¿Cómo cuido mis joyas para que duren más?",
+    "Sécalas después de nadar en piscinas o el mar, guárdalas por separado para evitar roces y evita químicos abrasivos. Gracias a la tecnología de enchapado en oro 18k PVD, mantendrán su brillo radiante.",
+  ],
 ];
 
+export const soles = (val: number): string => `S/ ${val}`;
+
+export const waLink = (msg: string): string =>
+  `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+
 export const SCENES: Record<string, { label: string; cap: string }> = {
-  ducha:   { label: "Ducha diaria",      cap: "Te duchas con ella todos los días y el dorado sigue intacto." },
-  mar:     { label: "Mar, sol y arena",  cap: "Agua salada, arena y sol de verano: el color no se va." },
-  piscina: { label: "Piscina con cloro", cap: "Ni el cloro de la piscina le quita el brillo." },
-  gym:     { label: "Entrenamiento",     cap: "Sudor y movimiento sin manchar tu piel ni oscurecer la joya." },
+  ducha: {
+    label: "Ducha diaria",
+    cap: "Agua tibia, jabón y champú. Tu joya mantiene su brillo dorado intacto todos los días.",
+  },
+  mar: {
+    label: "Agua salada",
+    cap: "Salitre, olas y sol. El acero 316L con enchapado en oro 18k PVD no se oxida ni pierde color en el mar.",
+  },
+  piscina: {
+    label: "Piscina y cloro",
+    cap: "El cloro no decolora el enchapado en oro 18k PVD. Nada sin preocuparte por tus piezas favoritas.",
+  },
+  gym: {
+    label: "Sudor y entrenamiento",
+    cap: "Entrena al máximo. El sudor no altera el tono dorado ni irrita tu piel.",
+  },
 };
 
-export const soles = (n: number) => "S/ " + n.toFixed(0);
-export const waLink = (msg: string) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
+export const art = (type: string, isModal?: boolean): string => {
+  const sz = isModal ? 260 : 200;
+  const goldGrad = `
+    <defs>
+      <linearGradient id="goldShine" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#fff5cc" />
+        <stop offset="30%" stop-color="#d4af37" />
+        <stop offset="60%" stop-color="#f5e6a3" />
+        <stop offset="85%" stop-color="#aa8214" />
+        <stop offset="100%" stop-color="#ffe680" />
+      </linearGradient>
+      <linearGradient id="goldSoft" x1="0%" y1="100%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#9a7413" />
+        <stop offset="50%" stop-color="#d4af37" />
+        <stop offset="100%" stop-color="#fff8db" />
+      </linearGradient>
+      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="3" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
+    </defs>
+  `;
 
-let uid = 0;
-export function art(type: string, _big?: boolean): string {
-  const g = "g" + (uid++), t = "t" + uid;
-  const G = `url(#${g})`;
-  const defs = `<defs>
-    <linearGradient id="${g}" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#F6E3AE"/><stop offset=".35" stop-color="#D1AA62"/>
-      <stop offset=".62" stop-color="#9A7234"/><stop offset=".85" stop-color="#E4C686"/><stop offset="1" stop-color="#B8904A"/>
-    </linearGradient>
-    <radialGradient id="${t}" cx=".35" cy=".35" r=".8">
-      <stop offset="0" stop-color="#C98B3E"/><stop offset=".5" stop-color="#7A4A1E"/><stop offset="1" stop-color="#3D2410"/>
-    </radialGradient>
-  </defs>`;
-
-  const spark = (x: number, y: number, s = 1, c = "") =>
-    `<path class="tw ${c}" transform="translate(${x} ${y}) scale(${s})" d="M0-8L1.6-1.6 8 0 1.6 1.6 0 8-1.6 1.6-8 0-1.6-1.6Z" fill="#fff"/>`;
-  const fine = `<path d="M38 22 C46 120,154 120,162 22" fill="none" stroke="${G}" stroke-width="1.8" stroke-dasharray="3.2 1.6" stroke-linecap="round"/>`;
-  const heartP = (x: number, y: number, s: number) =>
-    `<g transform="translate(${x} ${y}) scale(${s})"><path d="M0 20C-12 11-11 0-5.5 0-2.5 0 0 2.5 0 4 0 2.5 2.5 0 5.5 0 11 0 12 11 0 20Z" fill="${G}"/><path d="M-6 3C-8 4-8 7-7 9" stroke="#fff" stroke-opacity=".7" stroke-width="1.2" fill="none" stroke-linecap="round"/></g>`;
-  const bail = (x: number, y: number) => `<circle cx="${x}" cy="${y}" r="2.6" fill="none" stroke="${G}" stroke-width="1.6"/>`;
-
-  let s = "";
-  switch (type) {
-    case "snake":
-      s = `<path d="M38 22 C46 122,154 122,162 22" fill="none" stroke="${G}" stroke-width="7" stroke-linecap="round"/>
-           <path d="M42 26 C52 112,148 112,158 26" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.2"/>
-           ${spark(122,96,.9)}${spark(56,62,.6,"d2")}`;
-      break;
-    case "heart":
-      s = fine + bail(100,98) + heartP(100,101,1.1) + spark(118,108,.7) + spark(60,50,.5,"d3");
-      break;
-    case "cross":
-      s = fine + bail(100,98) + `<g fill="${G}"><rect x="97.5" y="101" width="5" height="30" rx="1.5"/><rect x="89" y="109" width="22" height="5" rx="1.5"/></g>
-           <rect x="98.5" y="103" width="1.2" height="24" fill="#fff" opacity=".6"/>` + spark(116,106,.6);
-      break;
-    case "drop":
-      s = fine + bail(100,98) + `<path d="M100 101C104 108 110 115 110 121A10 10 0 0 1 90 121C90 115 96 108 100 101Z" fill="${G}"/>
-           <ellipse cx="96" cy="118" rx="2.4" ry="4" fill="#fff" opacity=".6"/>` + spark(117,116,.8) + spark(80,60,.5,"d2");
-      break;
-    case "huggies":
-      s = `<ellipse cx="70" cy="100" rx="22" ry="27" fill="none" stroke="${G}" stroke-width="8"/>
-           <ellipse cx="132" cy="100" rx="22" ry="27" fill="none" stroke="${G}" stroke-width="8"/>
-           <path d="M54 88A20 24 0 0 1 70 75" stroke="#fff" stroke-opacity=".65" stroke-width="1.5" fill="none"/>
-           <path d="M116 88A20 24 0 0 1 132 75" stroke="#fff" stroke-opacity=".65" stroke-width="1.5" fill="none"/>` + spark(150,76,.8) + spark(52,124,.5,"d3");
-      break;
-    case "bold":
-      s = `<ellipse cx="100" cy="102" rx="44" ry="50" fill="none" stroke="${G}" stroke-width="15"/>
-           <path d="M66 82A38 44 0 0 1 100 56" stroke="#fff" stroke-opacity=".6" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-           <rect x="94" y="44" width="12" height="6" rx="3" fill="${G}"/>` + spark(140,70,.9) + spark(66,140,.5,"d2");
-      break;
-    case "heartear":
-      s = `<line x1="68" y1="62" x2="68" y2="74" stroke="${G}" stroke-width="2"/><line x1="132" y1="62" x2="132" y2="74" stroke="${G}" stroke-width="2"/>`
-          + heartP(68,72,2.3) + heartP(132,72,2.3) + spark(150,80,.8) + spark(50,110,.5,"d3");
-      break;
-    case "trio":
-      s = `<ellipse cx="100" cy="78" rx="44" ry="15" fill="none" stroke="${G}" stroke-width="3.5"/>
-           <ellipse cx="100" cy="102" rx="44" ry="15" fill="none" stroke="${G}" stroke-width="5"/>
-           <ellipse cx="100" cy="126" rx="44" ry="15" fill="none" stroke="${G}" stroke-width="3.5"/>
-           <path d="M66 108A42 13 0 0 0 100 117" stroke="#fff" stroke-opacity=".6" stroke-width="1.3" fill="none"/>` + spark(142,96,.8);
-      break;
-    case "signet":
-      s = `<ellipse cx="100" cy="112" rx="46" ry="22" fill="none" stroke="${G}" stroke-width="9"/>
-           <rect x="72" y="70" width="56" height="36" rx="10" fill="${G}"/>
-           <g stroke="#fff" stroke-opacity=".35" stroke-width="1.4">${Array.from({length:8},(_,i)=>`<line x1="${78+i*6}" y1="74" x2="${76+i*6}" y2="102"/>`).join("")}</g>
-           <rect x="72" y="70" width="56" height="36" rx="10" fill="none" stroke="#fff" stroke-opacity=".4"/>` + spark(130,72,.9) + spark(64,134,.5,"d2");
-      break;
-    case "chain": {
-      const N=16, links: {y:number, el:string}[] = [];
-      for(let i=0;i<N;i++){
-        const a=2*Math.PI*i/N, x=100+58*Math.cos(a), y=104+28*Math.sin(a);
-        const r=Math.atan2(28*Math.cos(a),-58*Math.sin(a))*180/Math.PI;
-        links.push({y,el:`<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="9" ry="5.5" transform="rotate(${r.toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})" fill="none" stroke="${G}" stroke-width="3" opacity="${Math.sin(a)<0?.6:1}"/>`});
-      }
-      s = links.sort((p,q)=>p.y-q.y).map(l=>l.el).join("")+spark(150,118,.8)+spark(56,82,.5,"d3");
-      break;
-    }
-    case "beads": {
-      const N=18, b: {y:number, el:string}[] = [];
-      for(let i=0;i<N;i++){
-        const a=2*Math.PI*i/N, x=100+56*Math.cos(a), y=104+28*Math.sin(a), sc=.82+.18*Math.sin(a);
-        b.push({y,el:`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(7.5*sc).toFixed(1)}" fill="${i%3===0?G:`url(#${t})`}"/><circle cx="${(x-2.2).toFixed(1)}" cy="${(y-2.4).toFixed(1)}" r="${(1.8*sc).toFixed(1)}" fill="#fff" opacity=".55"/>`});
-      }
-      s = b.sort((p,q)=>p.y-q.y).map(l=>l.el).join("")+spark(152,112,.7);
-      break;
-    }
-    case "set":
-      s = `<path d="M44 18 C52 100,148 100,156 18" fill="none" stroke="${G}" stroke-width="1.8" stroke-dasharray="3.2 1.6"/>`
-          + bail(100,80) + `<circle cx="100" cy="88" r="5.5" fill="${G}"/>`
-          + `<ellipse cx="74" cy="142" rx="14" ry="17" fill="none" stroke="${G}" stroke-width="5.5"/><ellipse cx="126" cy="142" rx="14" ry="17" fill="none" stroke="${G}" stroke-width="5.5"/>`
-          + spark(140,126,.7)+spark(62,52,.5,"d2");
-      break;
+  let inner = "";
+  if (type === "huggies") {
+    inner = `
+      <ellipse cx="42" cy="50" rx="18" ry="24" fill="none" stroke="url(#goldShine)" stroke-width="8" stroke-linecap="round" />
+      <ellipse cx="62" cy="52" rx="15" ry="20" fill="none" stroke="url(#goldSoft)" stroke-width="6.5" stroke-linecap="round" />
+      <path class="tw" d="M38 32 L40 26 L42 32 L48 34 L42 36 L40 42 L38 36 L32 34 Z" fill="#fff" />
+      <path class="tw d2" d="M68 62 L69 57 L71 62 L76 63 L71 65 L69 70 L68 65 L63 63 Z" fill="#ffe999" />
+      <path class="tw d3" d="M52 20 L53 16 L54 20 L58 21 L54 22 L53 26 L52 22 L48 21 Z" fill="#fff" />
+    `;
+  } else if (type === "bold") {
+    inner = `
+      <path d="M50 20 C40 35 32 50 32 65 C32 80 40 88 50 88 C60 88 68 80 68 65 C68 50 60 35 50 20 Z" fill="url(#goldShine)" />
+      <ellipse cx="46" cy="58" rx="8" ry="16" fill="url(#goldSoft)" opacity="0.6" />
+      <path class="tw" d="M50 30 L52 25 L54 30 L59 32 L54 34 L52 39 L50 34 L45 32 Z" fill="#fff" />
+      <path class="tw d2" d="M62 70 L63 66 L65 70 L69 71 L65 72 L63 76 L62 72 L58 71 Z" fill="#fff" />
+    `;
+  } else if (type === "cross") {
+    inner = `
+      <path d="M15 15 Q50 35 85 15" fill="none" stroke="url(#goldSoft)" stroke-width="2.5" />
+      <rect x="47" y="32" width="6" height="48" rx="3" fill="url(#goldShine)" />
+      <rect x="34" y="44" width="32" height="6" rx="3" fill="url(#goldShine)" />
+      <circle cx="50" cy="47" r="2.5" fill="#fff" opacity="0.8" />
+      <path class="tw" d="M50 32 L52 27 L54 32 L59 34 L54 36 L52 41 L50 36 L45 34 Z" fill="#fff" />
+      <path class="tw d2" d="M65 47 L66 43 L68 47 L72 48 L68 49 L66 53 L65 49 L61 48 Z" fill="#fff" />
+    `;
+  } else if (type === "snake") {
+    inner = `
+      <path d="M20 28 C30 65 70 65 80 28" fill="none" stroke="url(#goldShine)" stroke-width="8" stroke-linecap="round" />
+      <path d="M24 32 C33 60 67 60 76 32" fill="none" stroke="url(#goldSoft)" stroke-width="3" opacity="0.7" />
+      <path class="tw" d="M50 64 L52 59 L54 64 L59 66 L54 68 L52 73 L50 68 L45 66 Z" fill="#fff" />
+      <path class="tw d3" d="M30 40 L31 36 L33 40 L37 41 L33 42 L31 46 L30 42 L26 41 Z" fill="#fff" />
+    `;
+  } else if (type === "heart") {
+    inner = `
+      <path d="M15 20 Q50 42 85 20" fill="none" stroke="url(#goldSoft)" stroke-width="2.5" />
+      <path d="M50 50 C45 35 25 38 25 54 C25 68 50 82 50 82 C50 82 75 68 75 54 C75 38 55 35 50 50 Z" fill="url(#goldShine)" />
+      <path class="tw" d="M50 48 L52 43 L54 48 L59 50 L54 52 L52 57 L50 52 L45 50 Z" fill="#fff" />
+      <path class="tw d2" d="M68 46 L69 42 L71 46 L75 47 L71 48 L69 52 L68 48 L64 47 Z" fill="#fff" />
+    `;
+  } else if (type === "trio" || type === "signet") {
+    inner = `
+      <ellipse cx="50" cy="50" rx="34" ry="22" fill="none" stroke="url(#goldShine)" stroke-width="8" />
+      <ellipse cx="50" cy="50" rx="30" ry="18" fill="none" stroke="url(#goldSoft)" stroke-width="3" opacity="0.6" />
+      <path class="tw" d="M72 40 L74 35 L76 40 L81 42 L76 44 L74 49 L72 44 L67 42 Z" fill="#fff" />
+      <path class="tw d2" d="M30 52 L31 48 L33 52 L37 53 L33 54 L31 58 L30 54 L26 53 Z" fill="#fff" />
+    `;
+  } else {
+    // Chain / default
+    inner = `
+      <path d="M18 50 C26 38 40 38 50 50 C60 62 74 62 82 50" fill="none" stroke="url(#goldShine)" stroke-width="7" stroke-linecap="round" stroke-dasharray="14 4" />
+      <circle cx="50" cy="50" r="5" fill="url(#goldSoft)" />
+      <path class="tw" d="M50 36 L52 31 L54 36 L59 38 L54 40 L52 45 L50 40 L45 38 Z" fill="#fff" />
+      <path class="tw d2" d="M78 44 L79 40 L81 44 L85 45 L81 46 L79 50 L78 46 L74 45 Z" fill="#fff" />
+    `;
   }
-  const shift = ["snake","heart","cross","drop"].includes(type) ? 26 : ["set"].includes(type) ? 8 : 4;
-  const shadow = `<ellipse cx="100" cy="172" rx="46" ry="4.5" fill="#8E6C33" opacity=".12"/>`;
-  return `<svg viewBox="0 0 200 200" aria-hidden="true">${defs}${shadow}<g transform="translate(0 ${shift})">${s}</g></svg>`;
-}
+
+  return `<svg viewBox="0 0 100 100" width="${sz}" height="${sz}" style="width:100%;height:100%;overflow:visible;">${goldGrad}${inner}</svg>`;
+};
