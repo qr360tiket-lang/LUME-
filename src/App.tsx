@@ -434,6 +434,7 @@ export default function App() {
                   src="https://res.cloudinary.com/pdwsqs4f/image/upload/v1792019380/Retrato_en_arco_sobre_fondo_transparente.png"
                   alt="Lumé by Cin · Joyas Waterproof"
                   loading="eager"
+                  referrerPolicy="no-referrer"
                 />
               </div>
               <div className="shine" />
@@ -565,7 +566,9 @@ export default function App() {
                         src={currentImg}
                         alt={p.name}
                         className="product-img"
-                        loading="lazy"
+                        loading="eager"
+                        decoding="async"
+                        referrerPolicy="no-referrer"
                       />
                     ) : (
                       <div
@@ -1051,9 +1054,17 @@ export default function App() {
                 <div key={id} className="line-item">
                   <div className="th">
                     {p.images && p.images.length > 0 ? (
-                      <img src={p.images[0]} alt={p.name} />
+                      <img
+                        src={p.images[0]}
+                        alt={p.name}
+                        referrerPolicy="no-referrer"
+                      />
                     ) : p.image ? (
-                      <img src={p.image} alt={p.name} />
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        referrerPolicy="no-referrer"
+                      />
                     ) : (
                       <div dangerouslySetInnerHTML={{ __html: art(p.art) }} />
                     )}
@@ -1189,6 +1200,7 @@ export default function App() {
                     <img
                       src={curModalImg}
                       alt={selectedProduct.name}
+                      referrerPolicy="no-referrer"
                       className={"max-w-full max-h-[300px] object-contain drop-shadow-md transition-all duration-300 " + (modalImages && modalImages.length > 1 ? "cursor-pointer hover:scale-[1.02]" : "")}
                       onClick={() => {
                         if (modalImages && modalImages.length > 1) {
@@ -1218,7 +1230,7 @@ export default function App() {
                           }}
                           aria-label={`Ver foto ${idx + 1}`}
                         >
-                          <img src={src} alt={`${selectedProduct.name} ${idx + 1}`} />
+                          <img src={src} alt={`${selectedProduct.name} ${idx + 1}`} referrerPolicy="no-referrer" />
                         </button>
                       ))}
                     </div>

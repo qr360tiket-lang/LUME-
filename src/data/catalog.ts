@@ -28,7 +28,7 @@ export const PRODUCTS: Product[] = [
   // --- COLLARES ---
   {
     id: 1,
-    name: "Collar Snake Gold",
+    name: "Collar Snake",
     cat: "collares",
     price: 49,
     art: "snake",
@@ -41,65 +41,6 @@ export const PRODUCTS: Product[] = [
     ],
     details: [
       "Medida: 40 cm + 6 cm de extensor",
-      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
-      "100% waterproof: resistente a ducha, mar y piscina",
-      "Hipoalergénico, apto para pieles sensibles",
-    ],
-  },
-  {
-    id: 3,
-    name: "Collar Corazón Gold",
-    cat: "collares",
-    price: 42,
-    art: "heart",
-    tag: "Romántico",
-    measure: "40 cm + 6 cm extensor",
-    desc: "Dije corazón inflado sobre cadena fina pulida. Medida: 40 cm + 6 cm de extensor. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
-    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/a933ffae-c692-491c-8480-161b9a92c300.png",
-    images: [
-      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/a933ffae-c692-491c-8480-161b9a92c300.png",
-    ],
-    details: [
-      "Medida: 40 cm + 6 cm de extensor",
-      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
-      "100% waterproof: resistente a ducha, mar y piscina",
-      "Hipoalergénico, apto para pieles sensibles",
-    ],
-  },
-  {
-    id: 4,
-    name: "Collar Cruz Gold",
-    cat: "collares",
-    price: 45,
-    art: "cross",
-    measure: "40 cm + 6 cm extensor",
-    desc: "Cruz pulida minimalista en cadena clásica. Medida: 40 cm + 6 cm de extensor. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
-    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/f531dfcb-3394-4b55-a249-14a974b9fcff.png",
-    images: [
-      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/f531dfcb-3394-4b55-a249-14a974b9fcff.png",
-    ],
-    details: [
-      "Medida: 40 cm + 6 cm de extensor",
-      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
-      "100% waterproof: resistente a ducha, mar y piscina",
-      "Hipoalergénico, apto para pieles sensibles",
-    ],
-  },
-  {
-    id: 5,
-    name: "Collar Cruz Gold Maxi",
-    cat: "collares",
-    price: 66,
-    art: "cross",
-    tag: "Exclusivo",
-    measure: "45 cm + 6 cm extensor",
-    desc: "Cruz pulida en cadena más amplia para layering perfecto. Medida: 45 cm + 6 cm de extensor. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
-    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/0fcb640e-566b-430c-abfa-7e44a423e20e.png",
-    images: [
-      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/0fcb640e-566b-430c-abfa-7e44a423e20e.png",
-    ],
-    details: [
-      "Medida: 45 cm + 6 cm de extensor",
       "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
       "100% waterproof: resistente a ducha, mar y piscina",
       "Hipoalergénico, apto para pieles sensibles",
@@ -128,26 +69,6 @@ export const PRODUCTS: Product[] = [
   },
 
   // --- PULSERAS ---
-  {
-    id: 8,
-    name: "Pulsera Tennis Gold",
-    cat: "pulseras",
-    price: 49,
-    art: "chain",
-    tag: "Clásico",
-    measure: "16 cm + 4 cm extensor",
-    desc: "Línea continua de circonias engarzadas que atrapan la luz. Medida: 16 cm + 4 cm de extensor. Acero inoxidable 316L · Enchapado en Oro 18k PVD.",
-    image: "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/12f277ca-e3bc-4286-a2ae-c706d860d5b2.png",
-    images: [
-      "https://res.cloudinary.com/pdwsqs4f/image/upload/v1792030054/12f277ca-e3bc-4286-a2ae-c706d860d5b2.png",
-    ],
-    details: [
-      "Medida: 16 cm + 4 cm de extensor",
-      "Acero inoxidable 316L · Enchapado en Oro 18k PVD",
-      "100% waterproof: resistente a ducha, mar y piscina",
-      "Hipoalergénica, apta para pieles sensibles",
-    ],
-  },
   {
     id: 9,
     name: "Pulsera Fine Beour",

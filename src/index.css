@@ -140,7 +140,7 @@ section{position:relative}
 .card.in{opacity:1;transform:none}
 .card.hide{display:none}
 .card .media{position:relative;aspect-ratio:1/1;border-radius:18px;overflow:hidden;background:radial-gradient(90% 70% at 50% 35%,#FFFDF8,var(--cream-2) 70%,var(--sand));border:1px solid rgba(184,149,90,.22);cursor:pointer}
-.card .media img.product-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.card .media img.product-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;transition:transform .8s var(--ease)}
 .card:hover .media img.product-img{transform:scale(1.08)}
 .card .media .art{position:absolute;inset:6%;transition:transform .8s var(--ease)}
 .card:hover .media .art{transform:scale(1.08) rotate(-2deg)}
